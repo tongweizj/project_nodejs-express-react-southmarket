@@ -34,9 +34,9 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: 'dist',
       emptyOutDir: true,
-      rollupOptions: {
-        input: './src/main.jsx',
-      },
+      //rollupOptions: {
+      //  input: './src/main.jsx',
+      //},
     },
   };
 });

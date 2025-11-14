@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently 'vite' \"nodemon ../server.js\"",
+    "dev": "vite",
     "start": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -44,6 +44,6 @@
     "nodemon": "^3.1.7",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
-    "vite": "^5.4.1"
+    "vite": "^5.4.21"
   }
 }
