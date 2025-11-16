@@ -6,6 +6,8 @@ const config = {
         process.env.MONGO_HOST ||
         'mongodb://' + (process.env.IP || 'localhost') + ':' +
         (process.env.MONGO_PORT || '27017') +
-        '/mernproject'
+        '/mernproject',
+    frontendUrl: 'http://192.168.2.150:8300',
+    allowedOrigins: ['http://192.168.2.150:8300', 'http://localhost:8300']
 }
 export default config

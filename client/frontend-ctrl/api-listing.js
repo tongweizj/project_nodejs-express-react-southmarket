@@ -1,9 +1,15 @@
+import config from '../config.js';
+
+const API_BASE_URL = 'http://192.168.2.150:8310';
+
 // CREATE
 export const create = async (formData) => {
-    const res = await fetch('/api/listings/', {
+    const res = await fetch(`${API_BASE_URL}/api/listings/`, {
       method: 'POST',
       body: formData,
     });
+    const url = `${API_BASE_URL}/api/listings/`
+    console.log('Creating listing at:', url); // 调试
     if (!res.ok) {
       const text = await res.text();
       throw new Error(`CREATE failed: HTTP ${res.status} ${res.statusText} – ${text}`);
@@ -13,7 +19,7 @@ export const create = async (formData) => {
   
   // LIST
   export const list = async (signal) => {
-    const res = await fetch('/api/listings/', {
+    const res = await fetch(`${API_BASE_URL}/api/listings/`, {
       method: 'GET',
       signal,
     });
@@ -26,7 +32,7 @@ export const create = async (formData) => {
   
   // READ
   export const read = async (params, credentials, signal) => {
-    const res = await fetch(`/api/listings/${params.listingId}`, {
+    const res = await fetch(`${API_BASE_URL}/api/listings/${params.listingId}`, {
       method: 'GET',
       signal,
       headers: {
@@ -60,7 +66,7 @@ export const create = async (formData) => {
   
     console.log("🧾 Dados enviados no PUT:", dataToSend);
   
-    const res = await fetch(`/api/listings/${params.listingId}`, options);
+    const res = await fetch(`${API_BASE_URL}/api/listings/${params.listingId}`, options);
     if (!res.ok) {
       const text = await res.text();
       throw new Error(`UPDATE failed: HTTP ${res.status} ${res.statusText} – ${text}`);
@@ -71,7 +77,7 @@ export const create = async (formData) => {
   
   // REMOVE
   export const remove = async (params) => {
-    const res = await fetch(`/api/listings/${params.listingId}`, {
+    const res = await fetch(`${API_BASE_URL}/api/listings/${params.listingId}`, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',

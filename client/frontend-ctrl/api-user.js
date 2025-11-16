@@ -1,6 +1,7 @@
+import config from '../config.js';
 const create = async (user) => {
     try {
-        let response = await fetch(`/api/users/`, {
+        let response = await fetch(`${config.API_BASE_URL}/api/users/`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

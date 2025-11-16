@@ -9,10 +9,15 @@ import authRoutes from './routes/auth.routes.js'
 import categoryRoutes from './routes/category.routes.js'
 import listingRoutes from './routes/listing.routes.js'
 import ratingRoutes from './routes/rating.routes.js'
+import config from '../config/config.js';
 import path from 'path'
 
 const app = express()
-app.use(cors())
+app.use(cors({
+  origin: 'http://192.168.2.150:8300', // 明确指定前端地址
+  credentials: true
+}));
+
 const CURRENT_WORKING_DIR = process.cwd()
 app.use("/uploads", express.static(path.join(CURRENT_WORKING_DIR, "../../server/uploads")));
 
