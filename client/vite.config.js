@@ -3,7 +3,7 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-  // carrega variáveis de .env (ex.: VITE_BACKEND_PORT)
+  // 从 .env 文件加载变量（例如，VITE_BACKEND_PORT）
   const env = loadEnv(mode, process.cwd(), ''); 
   const BACKEND_PORT = env.VITE_BACKEND_PORT || '3001';
 
@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => {
       // porta do Vite (dev server)
       port: 5174,
 
-      // todas as chamadas para /api e /auth serão redirecionadas para o seu back
+      // 这个代理配置只在开发环境下有效
+      // 所有对 /api 和 /auth 的调用都将被重定向到您的后端。
       proxy: {
         '/api': {
           target: `http://localhost:${BACKEND_PORT}`,
