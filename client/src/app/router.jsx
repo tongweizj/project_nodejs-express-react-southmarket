@@ -1,21 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from '../../components/Home/Home.jsx';
-import Favorites from '../../components/Favorites/Favorites.jsx';
-import Signup from '../../components/Signup/Signup.jsx';
-import Signin from '../../components/Signin/Signin.jsx';
-import NotFound from '../../components/NotFound/NotFound.jsx';
-import Profile from '../../components/Profile/Profile.jsx';
-import NewListing from '../../components/NewListing/NewListing.jsx';
-import Cart from '../../components/Cart/Cart.jsx';
-import MyListings from '../../components/MyListings/MyListings.jsx';
-import About from '../../components/About/About.jsx';
-import Contact from '../../components/Contact/Contact.jsx';
-import Privacy from '../../components/Privacy/Privacy.jsx';
-import Favourites from '../../components/Favourites/Favourites.jsx';
-import EditListing from '../../components/EditListing/EditListing.jsx';
-import Services from '../../components/Sertvices/Services.jsx'; 
-import FAQ from '../../components/Faq/Faq.jsx';
-import HelpCenter from '../../components/Help/Help.jsx';
+import Home from '/src/pages/Home';
+import Favorites from '/src/pages/Favorites';
+import Signup from '/src/pages/Signup';
+import Signin from '/src/pages/Signin';
+import NotFound from '/src/pages/NotFound';
+import Profile from '/src/pages/Profile';
+import NewListing from '/src/pages/NewListing';
+import Cart from '/src/pages/Cart';
+import MyListings from '/src/pages/MyListings';
+import About from '/src/pages/About';
+import Contact from '/src/pages/Contact';
+import Privacy from '/src/pages/Privacy';
+import Favourites from '/src/pages/Favourites';
+import EditListing from '/src/pages/EditListing';
+import Services from '/src/pages/Sertvices'; 
+import FAQ from '/src/pages/Faq';
+import HelpCenter from '/src/pages/Help';
 
 const AppRouter = () => {
     return (

@@ -3,8 +3,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AppRouter from './app/router';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { typography } from '@mui/system';
-import Nav from '../components/Nav/Nav.jsx';
-import Footer from '../components/Footer/Footer.jsx';
+import Nav from './shared/components/Nav/Nav.jsx';
+import Footer from './shared/components/Footer/Footer.jsx';
 const theme = createTheme({
   typography: {
     fontFamily: [
