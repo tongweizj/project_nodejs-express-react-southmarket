@@ -11,7 +11,6 @@ import MyListings from '/src/pages/MyListings';
 import About from '/src/pages/About';
 import Contact from '/src/pages/Contact';
 import Privacy from '/src/pages/Privacy';
-import Favourites from '/src/pages/Favourites';
 import EditListing from '/src/pages/EditListing';
 import Services from '/src/pages/Sertvices'; 
 import FAQ from '/src/pages/Faq';
@@ -32,7 +31,6 @@ const AppRouter = () => {
             <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/privacy" element={<Privacy />} />
-            <Route exact path="/favourites" element={<Favourites />} />
             <Route path="/listings/edit/:listingId" element={<EditListing />} />
             <Route exact path="/services" element={<Services />} /> 
             <Route exact path="/faq" element={<FAQ />} />

@@ -27,7 +27,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import config from '/config.js';
 import { useAuth } from "/helpers/auth-context.jsx";
 import { useCart } from "/helpers/CartContext.jsx";
-import { useFavourites } from "/helpers/FavouritesContext.jsx";
+import { useFavorites } from '/helpers/FavoritesContext';
 import { remove } from "/frontend-ctrl/api-listing.js";
 import "./ListingCard.css";
 
@@ -35,7 +35,7 @@ const ListingCard = ({ listing }) => {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const { addToCart } = useCart();
-  const { addToFavourites } = useFavourites();
+  const { addToFavourites } = useFavorites();
   const location = useLocation();
 
   const [isOpen, setIsOpen] = useState(false);
