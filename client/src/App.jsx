@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import MainRouter from '../MainRouter.jsx';
+import AppRouter from './app/router';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { typography } from '@mui/system';
-
+import Nav from '../components/Nav/Nav.jsx';
+import Footer from '../components/Footer/Footer.jsx';
 const theme = createTheme({
   typography: {
     fontFamily: [
@@ -21,7 +22,9 @@ const App = () => {
       <div className='layout'>
         <div className='content'>
           <Router>
-            <MainRouter />
+            <Nav />
+            <AppRouter />
+            <Footer />
           </Router>
         </div>
       </div>

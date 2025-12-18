@@ -1,3 +1,7 @@
+/**
+ * @deprecated
+ * 已迁移到 src/app/router.jsx
+ */
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home.jsx';
 import Nav from './components/Nav/Nav.jsx';

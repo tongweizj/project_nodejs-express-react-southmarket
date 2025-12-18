@@ -1,7 +1,8 @@
 import config from '../config.js';
 
-const API_BASE_URL = 'http://192.168.2.150:8310';
-
+// const API_BASE_URL = 'http://192.168.2.150:8310';
+const API_BASE_URL = config.API_BASE_URL;
+console.log(`API_BASE_URL:${API_BASE_URL}`)
 // CREATE
 export const create = async (formData) => {
     const res = await fetch(`${API_BASE_URL}/api/listings/`, {

@@ -14,7 +14,7 @@ import path from 'path'
 
 const app = express()
 app.use(cors({
-  origin: 'http://192.168.2.150:8300', // 明确指定前端地址
+  origin: ['http://localhost:5174', 'http://192.168.2.150:8300'], // 明确指定前端地址
   credentials: true
 }));
 
