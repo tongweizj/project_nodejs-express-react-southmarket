@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 import App from './App.jsx';
-import { AuthProvider } from '/helpers/auth-context';
+import { AuthProvider } from './context/AuthContext.jsx';
 import { CartProvider } from '/helpers/CartContext';
 import { FavoritesProvider } from '/helpers/FavoritesContext';
 

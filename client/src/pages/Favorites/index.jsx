@@ -4,21 +4,21 @@ import "./Favorites.css";
 import { useFavorites } from '/helpers/FavoritesContext';
 import ListingCard from "/src/shared/components/ListingCard/ListingCard";
 
-export default function Favourites() {
-  const { favourites, removeFromFavourites } = useFavorites();
+export default function Favorites() {
+  const { favoriteItems, removeFromFavorites } = useFavorites();
 
   return (
-    <div className="favourites-container">
+    <div className="favorites-container">
       <Typography variant="h4" gutterBottom textAlign="center" fontWeight="bold">
         Your Favourites
       </Typography>
-      {favourites.length === 0 ? (
+      {favoriteItems.length === 0 ? (
         <Typography variant="body1" textAlign="center">
-          You have no items in your favourites.
+          You have no items in your favorites.
         </Typography>
       ) : (
         <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
-          {favourites.map((listing) => (
+          {favoriteItems.map((listing) => (
             <Grid item xs={12} sm={6} md={4} key={listing._id}>
               <Box
                 sx={{
@@ -35,9 +35,9 @@ export default function Favourites() {
                   variant="outlined"
                   color="error"
                   sx={{ mt: 2, width: "100%" }}
-                  onClick={() => removeFromFavourites(listing._id)}
+                  onClick={() => removeFromFavorites(listing._id)}
                 >
-                  Remove from Favourites
+                  Remove from Favorites
                 </Button>
               </Box>
             </Grid>

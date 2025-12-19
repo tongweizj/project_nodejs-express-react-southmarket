@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 
 import { Add, Remove, Delete } from "@mui/icons-material";
-import { useAuth } from "/helpers/auth-context";
+import { useAuth } from '/src/context/AuthContext';
 import { useCart } from "/helpers/CartContext.jsx";
 import config from '/config.js';
 

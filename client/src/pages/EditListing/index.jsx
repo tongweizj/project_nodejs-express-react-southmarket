@@ -15,7 +15,7 @@ import {
 
 import { read, update } from "/frontend-ctrl/api-listing.js";
 import { list as listCategories } from "/frontend-ctrl/api-category.js";
-import { useAuth } from "/helpers/auth-context.jsx";
+import { useAuth } from '/src/context/AuthContext.jsx';
 
 const EditListing = () => {
   const { listingId } = useParams();

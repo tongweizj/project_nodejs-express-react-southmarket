@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useAuth } from '/helpers/auth-context';
+import { useAuth } from '/src/context/AuthContext.jsx';
 import './Footer.css';
 
 const Footer = () => {

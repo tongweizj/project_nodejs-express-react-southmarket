@@ -21,7 +21,7 @@ import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
 import AddIcon from "@mui/icons-material/Add";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-import { useAuth } from "/helpers/auth-context";
+import { useAuth } from '/src/context/AuthContext';
 import "./Nav.css";
 import "./Nav.module.css";
 import logo from "/assets/SOUTHMARKET.png";
@@ -158,7 +158,7 @@ const Nav = () => {
                 <IconButton
                   color="inherit"
                   component={NavLink}
-                  to="/favourites"
+                  to="/favorites"
                   className="iconButton favourites"
                 >
                   <FavoriteTwoToneIcon />

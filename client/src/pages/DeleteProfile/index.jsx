@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography } from '@mui/material';
 import './DeleteProfile.css';
 import { remove } from '/frontend-ctrl/api-user.js';
-import { useAuth } from '/helpers/auth-context';
+import { useAuth } from '/src/context/AuthContext.jsx';
 
 const DeleteAccount = () => {
   const { isAuthenticated, logout } = useAuth();

@@ -9,7 +9,7 @@ import {
   Alert,
 } from "@mui/material";
 
-import { useAuth } from "/helpers/auth-context";
+import { useAuth } from '/src/context/AuthContext';
 import { signin } from "/frontend-ctrl/api-auth.js";
 import { resetPassword } from "/frontend-ctrl/api-user.js"; // Função criada
 import "./Signin.css";

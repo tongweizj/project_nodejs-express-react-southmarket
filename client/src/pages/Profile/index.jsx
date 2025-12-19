@@ -5,7 +5,7 @@ import AddIcon from "@mui/icons-material/Add";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import { read } from "/frontend-ctrl/api-user.js";
-import { useAuth } from "/helpers/auth-context";
+import { useAuth } from '/src/context/AuthContext';
 import EditProfile from "/src/pages/EditProfile";
 import DeleteProfile from "/src/pages/DeleteProfile";
 import "./Profile.css";
