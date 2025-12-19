@@ -27,7 +27,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import config from '/config.js';
 import { useAuth } from '/src/context/AuthContext.jsx';
 import { useCart } from "/helpers/CartContext.jsx";
-import { useFavorites } from '/helpers/FavoritesContext';
+// import { useFavorites } from '/helpers/FavoritesContext';
+import { useFavorites } from "/src/hooks/useFavorites";
 import { remove } from "/frontend-ctrl/api-listing.js";
 import "./ListingCard.css";
 

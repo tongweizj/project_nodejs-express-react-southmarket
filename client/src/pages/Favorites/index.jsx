@@ -1,7 +1,8 @@
 import { Typography, Grid, Box, Button } from "@mui/material";
 
 import "./Favorites.css"; 
-import { useFavorites } from '/helpers/FavoritesContext';
+// import { useFavorites } from '/helpers/FavoritesContext';
+import { useFavorites } from "/src/hooks/useFavorites";
 import ListingCard from "/src/components/ListingCard/ListingCard";
 
 export default function Favorites() {
