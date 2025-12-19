@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { FavoritesContext } from "/helpers/FavoritesContext";
+import { FavoritesContext } from "/src/context/FavoritesContext";
 import { useAuth } from "../context/AuthContext";
 /**
  * Domain hook for Favorites

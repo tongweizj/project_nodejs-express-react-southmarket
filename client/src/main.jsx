@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client';
 
 import App from './App.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
-import { CartProvider } from '/helpers/CartContext';
-import { FavoritesProvider } from '/helpers/FavoritesContext';
+import { CartProvider } from './context/CartContext';
+import { FavoritesProvider } from './context/FavoritesContext';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

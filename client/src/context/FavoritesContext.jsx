@@ -1,5 +1,5 @@
 import React, { createContext, useState} from 'react';
-import { useAuth } from '../src/context/AuthContext';
+import { useAuth } from './AuthContext';
 
 export const FavoritesContext = createContext(null);
 

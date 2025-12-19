@@ -26,7 +26,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import config from '/config.js';
 import { useAuth } from '/src/context/AuthContext.jsx';
-import { useCart } from "/helpers/CartContext.jsx";
+// import { useCart } from "/helpers/CartContext.jsx";
+import { useCart } from "/src/hooks/useCart";
 // import { useFavorites } from '/helpers/FavoritesContext';
 import { useFavorites } from "/src/hooks/useFavorites";
 import { remove } from "/frontend-ctrl/api-listing.js";
@@ -35,7 +36,13 @@ import "./ListingCard.css";
 const ListingCard = ({ listing }) => {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
-  const { addToCart } = useCart();
+  const {
+    addItem,
+    cartItems,
+    updateQuantity,
+    removeItem,
+    clearCart,
+  } = useCart();
   const { addToFavorites } = useFavorites();
   const location = useLocation();
 
@@ -57,7 +64,7 @@ const ListingCard = ({ listing }) => {
   if (!listing.postedBy) return <></>;
 
   const handleAddToCart = () => {
-    addToCart(listing);
+    addItem(listing);
     setSnackbarMessage(`${listing.title} added to cart!`);
     setSnackbarSeverity("success");
     setSnackbarOpen(true);

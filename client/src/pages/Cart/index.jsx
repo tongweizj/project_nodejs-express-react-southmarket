@@ -17,17 +17,18 @@ import {
 
 import { Add, Remove, Delete } from "@mui/icons-material";
 import { useAuth } from '/src/context/AuthContext';
-import { useCart } from "/helpers/CartContext.jsx";
+// import { useCart } from "/helpers/CartContext.jsx";
+import { useCart } from "/src/hooks/useCart";
 import config from '/config.js';
+
 
 const Cart = () => {
   const { isAuthenticated } = useAuth();
   const {
     cartItems,
-    incrementQuantity,
-    decrementQuantity,
-    removeFromCart,
-    emptyCart
+    updateQuantity,
+    removeItem,
+    clearCart
   } = useCart();
   const [showAlert, setShowAlert] = useState(false);
 
@@ -48,19 +49,26 @@ const Cart = () => {
     cartItems.reduce((total, item) => total + item.quantity, 0);
 
   const handleIncrement = (id) => {
-    incrementQuantity(id);
+    console.log(`handleIncrement${id} :`)
+      // 先找到当前商品的数量
+    const currentItem = cartItems.find(item => item._id === id);
+    const currentQuantity = currentItem ? currentItem.quantity : 0;
+    updateQuantity(id, currentQuantity + 1);
   };
 
   const handleDecrement = (id) => {
-    decrementQuantity(id);
+    console.log(`handleDecrement${id} :`)
+    const currentItem = cartItems.find(item => item._id === id);
+    const currentQuantity = currentItem ? currentItem.quantity : 0;
+    updateQuantity(id, currentQuantity-1);
   };
 
   const handleRemove = (id) => {
-    removeFromCart(id);
+    removeItem(id);
   };
 
   const handleCheckout = () => {
-    emptyCart(); // Clears the cart
+    clearCart(); // Clears the cart
     setShowAlert(true); // Shows the alert
   };
 
