@@ -3,7 +3,7 @@ import { CircularProgress, Grid, Typography } from "@mui/material";
 
 import { useAuth } from '/src/context/AuthContext.jsx';
 import { list } from "/frontend-ctrl/api-listing.js";
-import ListingCard from "/src/shared/components/ListingCard/ListingCard.jsx";
+import ListingCard from "/src/components/ListingCard/ListingCard.jsx";
 import "./MyListings.css";
 
 const MyListings = () => {

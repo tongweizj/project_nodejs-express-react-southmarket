@@ -1,7 +1,12 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import auth from '../../helpers/auth-helper';
+import auth from '/helpers/auth-helper';
 
 const AuthContext = createContext();
+
+// isAuthenticated  
+// user 基本信息        
+// login / logout   
+// token 持久化        
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(auth.isAuthenticated());

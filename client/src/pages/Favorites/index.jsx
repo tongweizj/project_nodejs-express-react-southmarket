@@ -2,7 +2,7 @@ import { Typography, Grid, Box, Button } from "@mui/material";
 
 import "./Favorites.css"; 
 import { useFavorites } from '/helpers/FavoritesContext';
-import ListingCard from "/src/shared/components/ListingCard/ListingCard";
+import ListingCard from "/src/components/ListingCard/ListingCard";
 
 export default function Favorites() {
   const { favoriteItems, removeFromFavorites } = useFavorites();
