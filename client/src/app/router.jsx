@@ -6,7 +6,7 @@ import Signin from '/src/pages/Signin';
 import NotFound from '/src/pages/NotFound';
 import Profile from '/src/pages/Profile';
 import NewListing from '/src/pages/NewListing';
-import Cart from '/src/pages/Cart/CartPage';
+import Cart from '/src/pages/Cart';
 import MyListings from '/src/pages/MyListings';
 import About from '/src/pages/About';
 import Contact from '/src/pages/Contact';

@@ -1,50 +1,21 @@
-import { Typography, Grid, Box, Button } from "@mui/material";
+import FavoritesView from "/src/features/Favorites/FavoritesView";
+import { useFavorites } from "/src/features/Favorites/hooks";
+import { useAuth } from "/src/context/AuthContext";
 
-import "./Favorites.css"; 
-// import { useFavorites } from '/helpers/FavoritesContext';
-import { useFavorites } from "/src/hooks/useFavorites";
-import ListingCard from "/src/components/ListingCard/ListingCard";
+const FavoritesPage = () => {
+  const { isAuthenticated } = useAuth();
+  const favorites = useFavorites();
 
-export default function Favorites() {
-  const { favoriteItems, removeFromFavorites } = useFavorites();
+  if (!isAuthenticated) {
+    return <p>Please log in to view your cart.</p>;
+  }
 
   return (
-    <div className="favorites-container">
-      <Typography variant="h4" gutterBottom textAlign="center" fontWeight="bold">
-        Your Favourites
-      </Typography>
-      {favoriteItems.length === 0 ? (
-        <Typography variant="body1" textAlign="center">
-          You have no items in your favorites.
-        </Typography>
-      ) : (
-        <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
-          {favoriteItems.map((listing) => (
-            <Grid item xs={12} sm={6} md={4} key={listing._id}>
-              <Box
-                sx={{
-                  position: "relative",
-                  border: "1px solid #ccc",
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  padding: "16px",
-                  backgroundColor: "#fff",
-                }}
-              >
-                <ListingCard listing={listing} />
-                <Button
-                  variant="outlined"
-                  color="error"
-                  sx={{ mt: 2, width: "100%" }}
-                  onClick={() => removeFromFavorites(listing._id)}
-                >
-                  Remove from Favorites
-                </Button>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      )}
-    </div>
+    <FavoritesView
+      favoriteItems={favorites.favoriteItems}
+      removeFromFavorites = {favorites.removeFromFavorites}
+    />
   );
-}
+};
+
+export default FavoritesPage;

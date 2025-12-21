@@ -22,7 +22,7 @@ export function useCart() {
       saveCart(userId, items);
     }
   }, [items, userId]);
-
+ 
   const increment = (id) => {
     setItems((items) =>
       items.map((i) =>
