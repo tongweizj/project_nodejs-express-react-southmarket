@@ -1,4 +1,4 @@
-import { signout } from '/frontend-ctrl/api-auth.js'
+import { signout } from '/src/services/api-auth.js'
 
 const useAuth = {
   isAuthenticated() {

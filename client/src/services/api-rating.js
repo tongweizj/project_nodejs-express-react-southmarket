@@ -1,13 +1,13 @@
-import config from '../config.js';
-const create = async (category) => {
+import config from '/config.js';
+const create = async (rating) => {
     try {
-        let response = await fetch(`${config.API_BASE_URL}/api/categories/`, {
+        let response = await fetch(`${config.API_BASE_URL}/api/ratings/`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(category)
+            body: JSON.stringify(rating)
         })
         return await response.json()
     } catch (err) {
@@ -17,7 +17,7 @@ const create = async (category) => {
 
 const list = async (signal) => {
     try {
-        let response = await fetch(`${config.API_BASE_URL}/api/categories/`, {
+        let response = await fetch(`${config.API_BASE_URL}/api/ratings/`, {
             method: 'GET',
             signal: signal,
         })
@@ -29,7 +29,7 @@ const list = async (signal) => {
 
 const read = async (params, signal) => {
     try {
-        let response = await fetch(`${config.API_BASE_URL}/api/categories/` + params.categoryId, {
+        let response = await fetch(`${config.API_BASE_URL}/api/ratings/` + params.ratingId, {
             method: 'GET',
             signal: signal,
         })
@@ -39,15 +39,15 @@ const read = async (params, signal) => {
     }
 }
 
-const update = async (params, category) => {
+const update = async (params, rating) => {
     try {
-        let response = await fetch(`${config.API_BASE_URL}/api/categories/` + params.categoryId, {
+        let response = await fetch(`${config.API_BASE_URL}/api/ratings/` + params.ratingId, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(category)
+            body: JSON.stringify(rating)
         })
         return await response.json()
     } catch (err) {
@@ -57,7 +57,7 @@ const update = async (params, category) => {
 
 const remove = async (params) => {
     try {
-        let response = await fetch(`${config.API_BASE_URL}/api/categories/` + params.categoryId, {
+        let response = await fetch(`${config.API_BASE_URL}/api/ratings/` + params.ratingId, {
             method: 'DELETE'
         })
         return await response.json()

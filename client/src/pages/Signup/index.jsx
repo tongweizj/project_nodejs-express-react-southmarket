@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Card, Typography, TextField, Button, Alert } from "@mui/material"; // Added Alert
 
-import { create } from "/frontend-ctrl/api-user.js";
+import { create } from "/src/services/api-user.js";
 import "./Signup.css";
 
 export default function Signup() {

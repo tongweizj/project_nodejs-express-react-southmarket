@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, CircularProgress, Snackbar, Alert } from "@mui/material";
-import { remove } from "/frontend-ctrl/api-listing";
+import { remove } from "/src/services/api-listing";
 import { useAuth } from "/src/context/AuthContext.jsx";
 
 const DeleteListing = ({ params, credentials }) => {

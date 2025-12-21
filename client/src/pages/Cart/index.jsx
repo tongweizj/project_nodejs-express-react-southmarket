@@ -13,7 +13,7 @@ const CartPage = () => {
 
   return (
     <CartView
-      items={cart.items}
+      items={cart.cartItems}
       subtotal={cart.subtotal}
       onIncrement={cart.increment}
       onDecrement={cart.decrement}

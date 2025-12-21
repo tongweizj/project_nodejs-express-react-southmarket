@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, CircularProgress, Avatar, Button, Fab, T
 import AddIcon from "@mui/icons-material/Add";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-import { read } from "/frontend-ctrl/api-user.js";
+import { read } from "/src/services/api-user.js";
 import { useAuth } from '/src/context/AuthContext';
 import EditProfile from "/src/pages/EditProfile";
 import DeleteProfile from "/src/pages/DeleteProfile";

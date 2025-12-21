@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config from '/config.js';
 
 // const API_BASE_URL = 'http://192.168.2.150:8310';
 const API_BASE_URL = config.API_BASE_URL;

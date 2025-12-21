@@ -30,7 +30,7 @@ import { useAuth } from '/src/context/AuthContext.jsx';
 import { useCart } from "/src/features/cart/hooks";
 // import { useFavorites } from '/helpers/FavoritesContext';
 import { useFavorites } from "/src/features/favorites/hooks";
-import { remove } from "/frontend-ctrl/api-listing.js";
+import { remove } from "/src/services/api-listing.js";
 import "./ListingCard.css";
 
 const ListingCard = ({ listing }) => {

@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config from '/config.js';
 const create = async (user) => {
     try {
         let response = await fetch(`${config.API_BASE_URL}/api/users/`, {

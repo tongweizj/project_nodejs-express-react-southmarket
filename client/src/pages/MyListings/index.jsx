@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CircularProgress, Grid, Typography } from "@mui/material";
 
 import { useAuth } from '/src/context/AuthContext.jsx';
-import { list } from "/frontend-ctrl/api-listing.js";
+import { list } from "/src/services/api-listing.js";
 import ListingCard from "/src/components/ListingCard/ListingCard.jsx";
 import "./MyListings.css";
 

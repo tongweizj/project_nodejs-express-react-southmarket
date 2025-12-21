@@ -13,8 +13,8 @@ import {
   Alert
 } from "@mui/material";
 
-import { read, update } from "/frontend-ctrl/api-listing.js";
-import { list as listCategories } from "/frontend-ctrl/api-category.js";
+import { read, update } from "/src/services/api-listing.js";
+import { list as listCategories } from "/src/services/api-category.js";
 import { useAuth } from '/src/context/AuthContext.jsx';
 
 const EditListing = () => {

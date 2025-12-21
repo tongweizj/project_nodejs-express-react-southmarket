@@ -14,8 +14,8 @@ import {
 } from "@mui/material";
 
 import { useAuth } from '/src/context/AuthContext.jsx';
-import { create } from "/frontend-ctrl/api-listing.js";
-import { list } from "/frontend-ctrl/api-category.js";
+import { create } from "/src/services/api-listing.js";
+import { list } from "/src/services/api-category.js";
 
 const NewListing = () => {
     const { isAuthenticated } = useAuth();

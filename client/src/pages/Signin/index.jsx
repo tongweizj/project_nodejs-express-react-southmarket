@@ -10,8 +10,8 @@ import {
 } from "@mui/material";
 
 import { useAuth } from '/src/context/AuthContext';
-import { signin } from "/frontend-ctrl/api-auth.js";
-import { resetPassword } from "/frontend-ctrl/api-user.js"; // Função criada
+import { signin } from "/src/services/api-auth.js";
+import { resetPassword } from "/src/services/api-user.js"; // Função criada
 import "./Signin.css";
 
 export default function Signin() {

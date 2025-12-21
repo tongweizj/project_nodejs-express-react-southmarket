@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { Card, CardContent, Typography, TextField, Button, CircularProgress } from '@mui/material';
 
-import { read, update } from '/frontend-ctrl/api-user.js';
+import { read, update } from '/src/services/api-user.js';
 import { useAuth } from '/src/context/AuthContext.jsx';
 import './EditProfile.css';
 

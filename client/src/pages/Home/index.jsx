@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { CircularProgress, Grid, Typography, Box, Container } from "@mui/material";
 
 import ListingCard from "/src/components/ListingCard/ListingCard";
-import { list } from "/frontend-ctrl/api-listing";
+import { list } from "/src/services/api-listing";
 import hero from "/assets/Hero.png";
 import "./Home.css";
 
