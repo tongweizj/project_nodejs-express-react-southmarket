@@ -4,7 +4,7 @@ import { Card, CardContent, Typography, TextField, Button, CircularProgress } fr
 
 import { read, update } from '/src/services/api-user.js';
 import { useAuth } from '/src/context/AuthContext.jsx';
-import './EditProfile.css';
+
 
 const EditProfile = () => {
     const { isAuthenticated } = useAuth();

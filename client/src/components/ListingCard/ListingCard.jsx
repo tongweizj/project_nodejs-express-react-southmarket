@@ -26,9 +26,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import { IMAGE_BASE_URL } from '/src/config';
 import { useAuth } from '/src/context/AuthContext.jsx';
-// import { useCart } from "/helpers/CartContext.jsx";
 import { useCart } from "/src/features/cart/hooks";
-// import { useFavorites } from '/helpers/FavoritesContext';
 import { useFavorites } from "/src/features/favorites/hooks";
 import { remove } from "/src/services/api-listing.js";
 import "./ListingCard.css";
@@ -59,7 +57,7 @@ const ListingCard = ({ listing }) => {
   };
 
   const showPublicButtons = location.pathname === "/" && !isOpen;
-  const showPrivateButtons = location.pathname === "/myListings";
+  const showPrivateButtons = location.pathname === "/user/myListings";
 
   if (!listing.postedBy) return <></>;
 

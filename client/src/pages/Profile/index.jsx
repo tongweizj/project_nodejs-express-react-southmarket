@@ -6,8 +6,8 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import { read } from "/src/services/api-user.js";
 import { useAuth } from '/src/context/AuthContext';
-import EditProfile from "/src/pages/EditProfile";
-import DeleteProfile from "/src/pages/DeleteProfile";
+import EditProfile from "./ProfileEdit";
+import DeleteProfile from "./ProfileDelete";
 import "./Profile.css";
 
 const Profile = () => {

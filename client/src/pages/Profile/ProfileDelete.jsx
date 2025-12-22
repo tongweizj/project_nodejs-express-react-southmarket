@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography } from '@mui/material';
-import './DeleteProfile.css';
 import { remove } from '/src/services/api-user.js';
 import { useAuth } from '/src/context/AuthContext.jsx';
 

@@ -2,30 +2,34 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 80vh; /* Adicionado para empurrar o footer */
+  min-height: 80vh;
+  /* Adicionado para empurrar o footer */
   padding: 5em 0;
 }
-  .profile-card {
-    width: 400px;
-    padding: 0 6px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
-    border: 1px solid #c1c1c1;
-  }
 
-  .profile-content {
-    display: flex;
-    flex-direction: column;
+.profile-card {
+  width: 400px;
+  padding: 0 6px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
+  border: 1px solid #c1c1c1;
+}
 
-  }
-  
-  .profile-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px; /* Space between header and other info */
-  }
-  
-  .profile-title {
-    margin-right: 40px; /* Space between 'Profile' text and avatar */
+.profile-content {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  /* Space between header and other info */
+}
+
+.profile-title {
+  margin-right: 40px;
+  /* Space between 'Profile' text and avatar */
 }
 
 .profile-actions {
@@ -55,4 +59,50 @@
 
 .viewListings {
   background-color: #159b66 !important;
+}
+
+/* edit */
+.edit-profile-container {
+  padding: 0 16px 16px 16px;
+}
+
+.edit-profile-container:last-child {
+  padding-bottom: 16px !important;
+}
+
+.form-title {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+  /* Center-align the title */
+}
+
+.MuiTextField-root {
+  margin-bottom: 0.1rem;
+  /* Space between text fields */
+}
+
+
+.submit-button {
+  margin-top: 1rem;
+  align-self: center;
+  /* Center-align the button */
+  width: 100%;
+}
+
+.MuiTypography-body2 {
+  margin-top: 1rem;
+  text-align: center;
+  /* Center-align error messages */
+}
+
+/* delete */
+.delete-account-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn {
+  width: 100%;
 }
