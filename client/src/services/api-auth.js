@@ -1,7 +1,7 @@
-import config from '/config.js';
+import { API_BASE_URL } from '/src/config';
 const signin = async (user) => {
     try {
-        let response = await fetch(`${config.API_BASE_URL}/auth/signin/`, {
+        let response = await fetch(`${API_BASE_URL}/auth/signin/`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -17,7 +17,7 @@ const signin = async (user) => {
 }
 const signout = async () => {
     try {
-        let response = await fetch(`${config.API_BASE_URL}/auth/signout/`, {
+        let response = await fetch(`${API_BASE_URL}/auth/signout/`, {
             method: 'GET'
         })
         return await response.json()

@@ -1,40 +1,52 @@
 import { Route, Routes } from 'react-router-dom';
+
 import Home from '/src/pages/Home';
-import Favorites from '/src/pages/Favorites';
-import Signup from '/src/pages/Signup';
-import Signin from '/src/pages/Signin';
-import NotFound from '/src/pages/NotFound';
-import Profile from '/src/pages/Profile';
+
 import NewListing from '/src/pages/NewListing';
-import Cart from '/src/pages/Cart';
 import MyListings from '/src/pages/MyListings';
-import About from '/src/pages/About';
-import Contact from '/src/pages/Contact';
-import Privacy from '/src/pages/Privacy';
 import EditListing from '/src/pages/EditListing';
-import Services from '/src/pages/Sertvices'; 
-import FAQ from '/src/pages/Faq';
-import HelpCenter from '/src/pages/Help';
+
+import Signup from '/src/pages/auth/Signup';
+import Signin from '/src/pages/auth/Signin';
+
+import Profile from '/src/pages/Profile';
+
+import Favorites from '/src/pages/Favorites';
+import Cart from '/src/pages/Cart';
+
+import NotFound from '/src/pages/static/404';
+import About from '/src/pages/static/About';
+import Contact from '/src/pages/static/Contact';
+import Privacy from '/src/pages/static/Privacy';
+import Services from '/src/pages/static/Services'; 
+import FAQ from '/src/pages/static/Faq';
+import HelpCenter from '/src/pages/static/Help';
 
 const AppRouter = () => {
     return (
         <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/signup" element={<Signup />} />
-            <Route exact path="/signin" element={<Signin />} />
-            <Route exact path="*" element={<NotFound />} />
-            <Route exact path="/profile" element={<Profile />} />
-            <Route exact path="/favorites" element={<Favorites />} />
-            <Route exact path="/newListing" element={<NewListing />} />
-            <Route exact path="/cart" element={<Cart />} />
-            <Route exact path="/myListings" element={<MyListings />} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/contact" element={<Contact />} />
-            <Route exact path="/privacy" element={<Privacy />} />
+            <Route  path="/" element={<Home />} />
+            
+            <Route  path="/auth/signup" element={<Signup />} />
+            <Route  path="/auth/login" element={<Signin />} />
+            
+            <Route  path="/user/profile" element={<Profile />} />
+            <Route  path="/user/favorites" element={<Favorites />} />
+            <Route  path="/user/cart" element={<Cart />} />
+            <Route  path="/user/myListings" element={<MyListings />} />
+
             <Route path="/listings/edit/:listingId" element={<EditListing />} />
-            <Route exact path="/services" element={<Services />} /> 
-            <Route exact path="/faq" element={<FAQ />} />
-            <Route exact path="/help" element={<HelpCenter />} />
+            <Route  path="/listings/new" element={<NewListing />} />
+           
+            {/* Static pages */}
+            <Route  path="/about" element={<About />} />
+            <Route  path="/contact" element={<Contact />} />
+            <Route  path="/privacy" element={<Privacy />} />
+            <Route  path="/services" element={<Services />} /> 
+            <Route  path="/faq" element={<FAQ />} />
+            <Route  path="/help" element={<HelpCenter />} />\
+
+            <Route  path="*" element={<NotFound />} />
         </Routes>
     );
 };

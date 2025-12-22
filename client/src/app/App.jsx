@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import AppRouter from './app/router';
+import AppRouter from './router';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { typography } from '@mui/system';
 import Nav from '/src/components/Nav/Nav.jsx';

@@ -16,7 +16,7 @@ import {
   Link
 } from "@mui/material";
 import { Add, Remove, Delete } from "@mui/icons-material";
-import config from "/config.js";
+import { IMAGE_BASE_URL } from '/src/config';
 
 const CartView = ({
   items,
@@ -68,7 +68,7 @@ const CartView = ({
               <Grid container spacing={2} alignItems="center">
                 <Grid item xs={3}>
                   <img
-                    src={`${config.IMAGE_BASE_URL}/${item.images[0]}`}
+                    src={`${IMAGE_BASE_URL}/${item.images[0]}`}
                     alt={item.name}
                     style={{ width: "100%" }}
                   />

@@ -35,7 +35,7 @@ const Nav = () => {
   const handleLogout = () => {
     logout(() => {
       setSnackbarOpen(true);
-      navigate("/signin");
+      navigate("/auth/login");
     });
   };
 
@@ -123,7 +123,7 @@ const Nav = () => {
                 <Button
                   color="inherit"
                   component={NavLink}
-                  to="/signup"
+                  to="/auth/signup"
                   className="navLink"
                   activeClassName="active"
                 >
@@ -132,11 +132,11 @@ const Nav = () => {
                 <Button
                   color="inherit"
                   component={NavLink}
-                  to="/signin"
+                  to="/auth/login"
                   className="navLink"
                   activeClassName="active"
                 >
-                  Sign In
+                  Log In
                 </Button>
               </>
             )}
@@ -148,7 +148,7 @@ const Nav = () => {
                 <IconButton
                   color="inherit"
                   component={NavLink}
-                  to="/profile"
+                  to="/user/profile"
                   className="iconButton profile"
                 >
                   <AccountCircleTwoToneIcon />
@@ -158,7 +158,7 @@ const Nav = () => {
                 <IconButton
                   color="inherit"
                   component={NavLink}
-                  to="/favorites"
+                  to="/user/favorites"
                   className="iconButton favourites"
                 >
                   <FavoriteTwoToneIcon />
@@ -166,7 +166,7 @@ const Nav = () => {
               </Tooltip>
               <Tooltip title="Add Listing" arrow>
                 <IconButton
-                  onClick={() => navigate("/newListing")}
+                  onClick={() => navigate("/Listings/new")}
                   className="iconButton addListing"
                 >
                   <AddIcon sx={{ color: "white" }} />
@@ -174,7 +174,7 @@ const Nav = () => {
               </Tooltip>
               <Tooltip title="My Listing" arrow>
                 <IconButton
-                  onClick={() => navigate("/myListings")}
+                  onClick={() => navigate("/user/myListings")}
                   className="iconButton addListing"
                 >
                   <VisibilityIcon sx={{ color: "white" }} />
@@ -184,7 +184,7 @@ const Nav = () => {
                 <IconButton
                   color="inherit"
                   component={NavLink}
-                  to="/cart"
+                  to="/user/cart"
                   className="iconButton cart"
                 >
                   <ShoppingCartTwoToneIcon />

@@ -24,7 +24,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-import config from '/config.js';
+import { IMAGE_BASE_URL } from '/src/config';
 import { useAuth } from '/src/context/AuthContext.jsx';
 // import { useCart } from "/helpers/CartContext.jsx";
 import { useCart } from "/src/features/cart/hooks";
@@ -112,7 +112,7 @@ const ListingCard = ({ listing }) => {
           <CardMedia
             component="img"
             height="140"
-            image={`${config.IMAGE_BASE_URL}/${listing.images[0]}`}
+            image={`${IMAGE_BASE_URL}/${listing.images[0]}`}
             alt={listing.title || "Listing image"}
             className="listing-image"
           />
@@ -229,7 +229,7 @@ const ListingCard = ({ listing }) => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             {listing.images && listing.images.length > 0 && (
               <img
-                src={`${config.IMAGE_BASE_URL}/${listing.images[0]}`}
+                src={`${IMAGE_BASE_URL}/${listing.images[0]}`}
                 alt={listing.title}
                 className="modal-image"
               />
