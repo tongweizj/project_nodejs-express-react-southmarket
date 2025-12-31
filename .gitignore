@@ -53,3 +53,5 @@ aws-ec2-key.pem
 api/package-lock.json
 api/.env
 client/public/images/listings/*
+api/package-lock.json
+client/package-lock.json

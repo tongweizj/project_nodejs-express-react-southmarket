@@ -1,0 +1,9 @@
+.LogoColor {
+    fill: #fff;
+    color: #fff;
+}
+
+.SocialIcon {
+    -webkit-filter: contrast(200%) invert(1);
+    filter: contrast(200%) invert(1);
+}

@@ -1,0 +1,21 @@
+/* src/index.css 或 src/globals.css */
+
+/* Tailwind v4 的新语法 */
+@import "tailwindcss";
+
+/* 自定义基础样式 - 使用新的 @theme 语法 */
+@theme {
+  /* 这里可以定义自定义变量 */
+}
+
+/* 或者直接使用 CSS 自定义属性 */
+:root {
+  /* 定义颜色变量 */
+  --color-background: #f9fafb;
+  --color-text: #111827;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
