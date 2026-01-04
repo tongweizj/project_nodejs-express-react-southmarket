@@ -1,158 +1,81 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import {
-  Card,
-  Typography,
-  TextField,
-  Button,
-  Snackbar,
-  Alert,
-} from "@mui/material";
-
-import { useAuth } from '/src/context/AuthContext';
-import { signin } from "/src/services/api-auth.js";
-import { resetPassword } from "/src/services/api-user.js"; // Função criada
-import "./Signin.css";
+import { Link } from "react-router-dom";
+import { useSignin } from "@/features/auth/hooks/useSignin";
 
 export default function Signin() {
-  const navigate = useNavigate();
-  const { login } = useAuth();
-
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [snackbar, setSnackbar] = useState({
-    open: false,
-    type: "",
-    text: "",
-  });
-
-  const handleChange = (name) => (event) => {
-    setValues({ ...values, [name]: event.target.value });
-  };
-
-  const isValidEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const showSnackbar = (type, text) => {
-    setSnackbar({ open: true, type, text });
-  };
-
-  const closeSnackbar = () => {
-    setSnackbar({ ...snackbar, open: false });
-  };
-
-  const clickSubmit = () => {
-    if (!isValidEmail(values.email)) {
-      showSnackbar("error", "Please enter a valid email address.");
-      return;
-    }
-
-    const user = {
-      email: values.email || undefined,
-      password: values.password || undefined,
-    };
-
-    signin(user).then((data) => {
-      if (data.error) {
-        showSnackbar("error", data.error);
-      } else {
-        login(data, () => {
-          navigate("/");
-          setTimeout(() => {
-            window.location.reload();
-          }, 1000);
-        });
-      }
-    });
-  };
-
-  const handleResetPassword = () => {
-    if (!isValidEmail(values.email)) {
-      showSnackbar("error", "Please enter a valid email to reset.");
-      return;
-    }
-
-    resetPassword(values.email).then((data) => {
-      if (data && data.error) {
-        showSnackbar("error", data.error);
-      } else {
-        showSnackbar("success", "Password has been reset to 123456789.");
-      }
-    });
-  };
+  const {
+    values,
+    snackbar,
+    handleChange,
+    submitSignin,
+    submitResetPassword,
+    closeSnackbar,
+  } = useSignin();
 
   return (
-    <div className="signin-container">
-      <Card className="signin-card">
-        <div className="signin-left"></div>
+    <div className="w-full max-w-md mx-auto">
+      <div className="bg-white p-8 rounded-xl shadow-lg">
+        <h1 className="text-3xl font-bold text-center mb-2">欢迎回来</h1>
+        <p className="text-gray-600 text-center mb-8">登录您的账户</p>
+        {/* 登录表单 */}
+        {/* <LoginForm
+                    onSubmit={handleLogin}
+                    isLoading={isLoading}
+                /> */}
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          submitSignin();
+        }} className="space-y-6">
+          <div>
+            <input
+              type="email"
+              value={values.email}
+              onChange={handleChange("email")}
+              placeholder="邮箱地址"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              required
+            />
+          </div>
 
-        <div className="signin-right">
-          <Typography variant="h4" className="signin-title" fontWeight={"bold"}>
-            Welcome Back
-          </Typography>
-          <TextField
-            id="email"
-            label="Email Address"
-            value={values.email}
-            onChange={handleChange("email")}
-            margin="normal"
-            fullWidth
-          />
-          <TextField
-            id="password"
-            label="Password"
-            type="password"
-            value={values.password}
-            onChange={handleChange("password")}
-            margin="normal"
-            fullWidth
-          />
-          <Button
-            color="primary"
-            variant="contained"
-            size="large"
-            onClick={clickSubmit}
-            fullWidth
-            className="signin-button"
+          <div>
+            <input
+              type="password"
+              value={values.password}
+              onChange={handleChange("password")}
+              placeholder="密码"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              required
+            />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <label className="flex items-center">
+              <input type="checkbox" className="mr-2" />
+              <span className="text-gray-700">记住我</span>
+            </label>
+
+            <Link to="/auth/forgot-password" className="text-blue-600 hover:underline text-sm">
+              忘记密码?
+            </Link>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300"
           >
-            Log In
-          </Button>
+            登录
+          </button>
+        </form>
 
-          <Button
-            variant="outlined"
-            size="small"
-            onClick={handleResetPassword}
-            fullWidth
-            style={{ marginTop: "10px" }}
-          >
-            Reset Password
-          </Button>
-
-          <Typography variant="body2" className="signin-footer">
-            Don't have an account? <Link to="/signup">Sign up</Link>
-          </Typography>
+        <div className="mt-6 text-center">
+          <p className="text-gray-600">
+            还没有账户?{' '}
+            <Link to="/auth/signup" className="text-blue-600 font-medium hover:underline">
+              立即注册
+            </Link>
+          </p>
         </div>
-      </Card>
+      </div>
 
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={3000}
-        onClose={closeSnackbar}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      >
-        <Alert
-          onClose={closeSnackbar}
-          severity={snackbar.type}
-          sx={{ width: "100%" }}
-        >
-          {snackbar.text}
-        </Alert>
-      </Snackbar>
     </div>
   );
 }

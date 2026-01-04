@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
     server: {
       // porta do Vite (dev server)
       port: 5174,
+      historyApiFallback: true,
 
       // 这个代理配置只在开发环境下有效
       // 所有对 /api 和 /auth 的调用都将被重定向到您的后端。
@@ -45,9 +46,11 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: 'dist',
       emptyOutDir: true,
-      //rollupOptions: {
-      //  input: './src/main.jsx',
-      //},
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
+      },
     },
   };
 });

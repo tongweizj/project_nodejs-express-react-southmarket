@@ -31,7 +31,8 @@ export const create = async (formData) => {
   
   // READ
   export const read = async (params, credentials, signal) => {
-    const res = await fetch(`${API_BASE_URL}/api/listings/${params.listingId}`, {
+    console.log("service:", params)
+    const res = await fetch(`${API_BASE_URL}/api/listings/${params}`, {
       method: 'GET',
       signal,
       headers: {

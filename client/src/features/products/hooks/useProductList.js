@@ -15,6 +15,7 @@ export const useProductList = (query) => {
     try {
       const data = await list(signal);
       if (!data?.error) setListings(data);
+      console.log("products data:", data)
     } catch (err) {
       if (err.name !== "AbortError") console.error(err);
     } finally {

@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import auth from '/src/hooks/useAuth';
-
 const AuthContext = createContext();
 
 // isAuthenticated  
@@ -10,7 +9,6 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(auth.isAuthenticated());
-
   useEffect(() => {
     setIsAuthenticated(auth.isAuthenticated());
   }, []);
